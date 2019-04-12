@@ -27,7 +27,7 @@
 #
 
 
-INCLUDES = @LIBV4V_CFLAGS@  -I../src
+INCLUDES = @LIBARGO_CFLAGS@  -I../src
 
 PROTOSRCS = client.c get.c ls.c mkdir.c null.c put.c rename.c rm.c rmdir.c stat.c util.c
 
@@ -35,9 +35,9 @@ bin_PROGRAMS = icbinn_ftp
 
 icbinn_ftp_SOURCES = ${PROTOSRCS} 
 
-icbinn_ftp_CFLAGS = @V4V_EXTRA_CFLAGS@ 
+icbinn_ftp_CFLAGS = @ARGO_EXTRA_CFLAGS@
 
-icbinn_ftp_LDADD =  ../src/libicbinn.la @LIBV4V_LIBS@ 
+icbinn_ftp_LDADD =  ../src/libicbinn.la @LIBARGO_LIBS@
 
 #AM_CFLAGS=-g -Wall
 

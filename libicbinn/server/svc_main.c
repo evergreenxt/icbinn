@@ -18,8 +18,8 @@
 
 #include "project.h"
 
-#ifdef HAVE_LIBV4V
-# include <libv4v.h>
+#ifdef HAVE_LIBARGO
+# include <libargo.h>
 #endif
 
 #define ICBINN_TIMEOUT_SECS 60
@@ -32,7 +32,7 @@ usage (char *name)
   fprintf (stderr, "Usage:\n");
   fprintf (stderr, "%s [-t] [-p port] [-p port]\n", name);
   fprintf (stderr,
-           "    -t         Use TCP rather than V4V as the transport\n");
+           "    -t         Use TCP rather than Argo as the transport\n");
   fprintf (stderr, "    -p port    port number to use rather than %d\n",
            ICBINN_PROT_PORT);
 
@@ -100,11 +100,11 @@ svc_create_socket (struct sockaddr_in *saddr, int port, int use_tcp)
 
   if (!use_tcp)
     {
-#ifdef HAVE_LIBV4V
-      /* this forces a v4v socket without the need of INET_IS_V4V=1 env var */
-      sockfd = socket (AF_INETV4V, SOCK_STREAM, IPPROTO_TCP);
+#ifdef HAVE_LIBARGO
+      /* this forces a argo socket without the need of INET_IS_ARGO=1 env var */
+      sockfd = socket (AF_INETARGO, SOCK_STREAM, IPPROTO_TCP);
 #else
-      fatal ("no v4v support");
+      fatal ("no argo support");
 #endif
     }
   else
@@ -204,7 +204,7 @@ main (int argc, char *argv[])
   struct sockaddr_in saddrs[MAX_ICBINN_SOCKETS];
   pid_t chld;
   int len, i;
-#ifndef HAVE_LIBV4V
+#ifndef HAVE_LIBARGO
   int tflag = 1;
 #else
   int tflag = 0;

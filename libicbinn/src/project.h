@@ -91,8 +91,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#ifdef HAVE_LIBV4V
-# include <libv4v.h>
+#ifdef HAVE_LIBARGO
+# include <libargo.h>
 #endif
 
 #include <netdb.h>

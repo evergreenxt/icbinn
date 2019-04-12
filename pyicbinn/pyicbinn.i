@@ -93,7 +93,7 @@
    declarations? */
 
 ICBINN *icbinn_clnt_create_tcp(const char *host, int port);
-ICBINN *icbinn_clnt_create_v4v(int domid, int port);
+ICBINN *icbinn_clnt_create_argo(int domid, int port);
 void icbinn_clnt_destroy(ICBINN *icb);
 int icbinn_close(ICBINN *icb, int fd);
 int icbinn_lock(ICBINN *icb, int fd, int type);

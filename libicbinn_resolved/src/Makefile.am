@@ -36,7 +36,7 @@ LIBICBINN_LIBS_NO_DL=${LIBICBINN_LIBS:-ldl=}
 libicbinn_resolved_a_SOURCES =
 libicbinn_resolved_a_LIBADD = libicbinn_prelink.o
 
-#${AM_CFLAGS} ${V4V_EXTRA_CFLAGS}
+#${AM_CFLAGS} ${ARGO_EXTRA_CFLAGS}
 
 lib_LIBRARIES=libicbinn_resolved.a #libicbinn_resolved.so
 
@@ -45,7 +45,7 @@ lib_LIBRARIES=libicbinn_resolved.a #libicbinn_resolved.so
 #        -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
 #        -release $(LT_RELEASE) \
 #        -export-dynamic \
-#	@LIBTIRPC_LIBS@ @LIBV4V_LIBS@
+#	@LIBTIRPC_LIBS@ @LIBARGO_LIBS@
 
 LDFLAGS+=-Wl,--no-as-needed
 
