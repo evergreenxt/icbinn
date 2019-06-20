@@ -97,14 +97,14 @@ AC_SUBST(I2_HAVE_UNISTD_H)
 
 
 
-AC_ARG_WITH(v4v,AC_HELP_STRING([--with-v4v],[Force the absence of libv4v to be an error]), [EXPECTING_V4V=true], [EXPECTING_V4V=false])
+AC_ARG_WITH(argo,AC_HELP_STRING([--with-argo],[Force the absence of libargo to be an error]), [EXPECTING_ARGO=true], [EXPECTING_ARGO=false])
 
-AC_SUBST(V4V_EXTRA_CFLAGS)
-V4V_EXTRA_CFLAGS=""
+AC_SUBST(ARGO_EXTRA_CFLAGS)
+ARGO_EXTRA_CFLAGS=""
 
-PKG_CHECK_MODULES([LIBV4V],[libv4v],[V4V_EXTRA_CFLAGS="-DHAVE_LIBV4V=1"],[ 
-	if ${EXPECTING_V4V}; then
-		AC_ERROR(["No libv4v found and --with-v4v was specificed"])
+PKG_CHECK_MODULES([LIBARGO],[libargo],[ARGO_EXTRA_CFLAGS="-DHAVE_LIBARGO=1"],[
+	if ${EXPECTING_ARGO}; then
+		AC_ERROR(["No libargo found and --with-argo was specificed"])
 	fi
 ])
 

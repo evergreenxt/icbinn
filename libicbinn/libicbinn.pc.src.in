@@ -7,5 +7,5 @@ Name: libicbinn
 Description: libicbinn
 Requires: 
 Version: %VERSION%
-Libs: -L${libdir} -licbinn @LIBTIRPC_LIBS@ @LIBV4V_LIBS@ -ldl
+Libs: -L${libdir} -licbinn @LIBTIRPC_LIBS@ @LIBARGO_LIBS@ -ldl
 Cflags: -I${includedir}

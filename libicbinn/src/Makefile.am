@@ -29,9 +29,9 @@
 #
 
 
-INCLUDES = @LIBTIRPC_CFLAGS@ @LIBV4V_CFLAGS@
+INCLUDES = @LIBTIRPC_CFLAGS@ @LIBARGO_CFLAGS@
 
-LIBV4V_LIBS_NO_DL=${LIBV4V_LIBS:-ldl=}
+LIBARGO_LIBS_NO_DL=${LIBARGO_LIBS:-ldl=}
 
 PROTOSRCS=client.c close.c lock.c mkdir.c null.c open.c pread.c pwrite.c readdir.c rename.c rmdir.c stat.c unlink.c util.c version.c ftruncate.c fallocate.c rand.c readlink.c symlink.c statfs.c fsync.c canary.c
 
@@ -42,8 +42,8 @@ noinst_HEADERS=project.h prototypes.h icbinn-tail.h ext_prototypes.h
 libicbinn_a_SOURCES =  ${ICBINNSRCS}
 libicbinn_la_SOURCES = ${ICBINNSRCS}
 
-libicbinn_a_CFLAGS = ${AM_CFLAGS} ${V4V_EXTRA_CFLAGS}
-libicbinn_la_CFLAGS = ${AM_CFLAGS} ${V4V_EXTRA_CFLAGS}
+libicbinn_a_CFLAGS = ${AM_CFLAGS} ${ARGO_EXTRA_CFLAGS}
+libicbinn_la_CFLAGS = ${AM_CFLAGS} ${ARGO_EXTRA_CFLAGS}
 
 BUILT_SOURCES = icbinn.h 
 
@@ -58,7 +58,7 @@ libicbinn_la_LDFLAGS = \
         -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
         -release $(LT_RELEASE) \
         -export-dynamic \
-	@LIBTIRPC_LIBS@ @LIBV4V_LIBS@
+	@LIBTIRPC_LIBS@ @LIBARGO_LIBS@
 
 LDFLAGS+=-Wl,--no-as-needed
 

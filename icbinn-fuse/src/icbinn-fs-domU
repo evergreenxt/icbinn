@@ -17,4 +17,4 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-LD_PRELOAD=/usr/lib/libv4v-1.0.so.0 icbinn-fs $*
+LD_PRELOAD=/usr/lib/libargo-1.0.so.0 icbinn-fs $*
