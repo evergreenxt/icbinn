@@ -38,6 +38,7 @@ ext_modules = [Extension("_pyicbinn",
 			sources=['pyicbinn_wrap.c'],
 			library_dirs=libicbinn_lib_dirs,
 			libraries=libicbinn_libs,
+			extra_link_args=["-Wl,-Bsymbolic"],
 			include_dirs=libicbinn_include_dirs + [ '.' ])]
 
 setup(name = 'pyicbinn',   version = '0.1',
