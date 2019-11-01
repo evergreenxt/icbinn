@@ -239,7 +239,7 @@ main (int argc, char *argv[])
     usage (argv[0]);
 
   if (dflag)
-    icb = icbinn_clnt_create_v4v (domid, port);
+    icb = icbinn_clnt_create_argo (domid, port);
   else
     icb = icbinn_clnt_create_tcp (host, port);
 

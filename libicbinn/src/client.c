@@ -106,15 +106,15 @@ icbinn_clnt_create_tcp (const char *host, int port)
 }
 
 static int
-open_v4v_socket (int domid, int port, struct sockaddr_in *sin)
+open_argo_socket (int domid, int port, struct sockaddr_in *sin)
 {
-#ifdef HAVE_LIBV4V
+#ifdef HAVE_LIBARGO
   int sockfd;
 
   if (!port)
     port = ICBINN_PROT_PORT;
 
-  sockfd = socket (AF_INETV4V, SOCK_STREAM, IPPROTO_TCP);
+  sockfd = socket (AF_INETARGO, SOCK_STREAM, IPPROTO_TCP);
 
   if (sockfd < 0)
     return -1;
@@ -137,13 +137,13 @@ open_v4v_socket (int domid, int port, struct sockaddr_in *sin)
 }
 
 EXTERNAL ICBINN *
-icbinn_clnt_create_v4v (int domid, int port)
+icbinn_clnt_create_argo (int domid, int port)
 {
   int sockfd;
   struct sockaddr_in sin;
   ICBINN *ret;
 
-  sockfd = open_v4v_socket (domid, port, &sin);
+  sockfd = open_argo_socket (domid, port, &sin);
   if (sockfd < 0)
     return NULL;
 

@@ -26,7 +26,7 @@ INTERNAL void
 icbinn_canary (void)
 {
   (void) icbinn_clnt_create_tcp (NULL, 0);
-  (void) icbinn_clnt_create_v4v (0, 0);
+  (void) icbinn_clnt_create_argo (0, 0);
   icbinn_clnt_destroy (NULL);
   (void) icbinn_close (NULL, 0);
   (void) icbinn_lock (NULL, 0, 0);

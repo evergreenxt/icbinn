@@ -18,7 +18,7 @@
 
 /* client.c */
 ICBINN *icbinn_clnt_create_tcp(const char *host, int port);
-ICBINN *icbinn_clnt_create_v4v(int domid, int port);
+ICBINN *icbinn_clnt_create_argo(int domid, int port);
 void icbinn_clnt_destroy(ICBINN *icb);
 /* close.c */
 int icbinn_close(ICBINN *icb, int fd);

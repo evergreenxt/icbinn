@@ -33,7 +33,7 @@ noinst_PROGRAMS = test
 
 test_SOURCES = test.c
 
-test_LDADD = ../src/libicbinn.a @LIBTIRPC_LIBS@ @LIBV4V_LIBS@ 
+test_LDADD = ../src/libicbinn.a @LIBTIRPC_LIBS@ @LIBARGO_LIBS@
 
 LDFLAGS+=-Wl,--no-as-needed
 
